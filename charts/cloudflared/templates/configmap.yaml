@@ -4,8 +4,12 @@ metadata:
   name: cloudflared
 data:
   config.yaml: |
-    tunnel: homelab
-    credentials-file: /etc/cloudflared/creds/credentials.json
+    tunnel: {{ .Values.tunnel }}
+    credentials-file: /etc/cloudflared/credentials.json
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
+      {{- with .Values.ingress }}
+      {{- toYaml . | nindent 6 }}
+      {{- end }}
+      - service: http_status:404
