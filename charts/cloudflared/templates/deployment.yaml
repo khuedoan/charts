@@ -38,10 +38,10 @@ spec:
             periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-        volumeMounts:
-          - name: cloudflared
-            mountPath: /etc/cloudflared/
-            readOnly: true
+          volumeMounts:
+            - name: cloudflared
+              mountPath: /etc/cloudflared/
+              readOnly: true
       volumes:
         - name: cloudflared
           projected:
