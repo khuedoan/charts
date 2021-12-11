@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cloudflared.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "cloudflared.labels" . | nindent 4 }}
 spec:
@@ -53,6 +54,11 @@ spec:
                   items:
                     - key: config.yaml
                       path: config.yaml
+              - secret:
+                  name: cloudflared-credentials
+                  items:
+                    - key: credentials.json
+                      path: credentials.json
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 3
 
 image:
   repository: cloudflare/cloudflared
@@ -28,6 +28,4 @@ affinity: {}
 
 # Tunnel config
 tunnel: example-tunnel
-ingress:
-  - hostname: mytunnel.example.com
-    service: myservice.mynamespace.svc.cluster.local
+ingress: {}

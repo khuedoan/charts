@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloudflared-config
+  namespace: {{ .Release.Namespace }}
 data:
   config.yaml: |
     tunnel: {{ .Values.tunnel }}
@@ -12,4 +13,3 @@ data:
       {{- with .Values.ingress }}
       {{- toYaml . | nindent 6 }}
       {{- end }}
-      - service: http_status:404
