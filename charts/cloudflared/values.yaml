@@ -26,6 +26,28 @@ tolerations: []
 
 affinity: {}
 
+# Tunnel credentials
+# Run cloudflared tunnel login to gen a JSON credential file
+# Or use the cloudflare_argo_tunnel resource in Terraform
+# Credential format:
+#
+# {
+#   "AccountTag": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+#   "TunnelName": "example-tunnel",
+#   "TunnelID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+#   "TunnelSecret": "base64encodedxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=="
+# }
+#
+credentials:
+  existingSecret: ""
+
 # Tunnel config
-tunnel: example-tunnel
-ingress: {}
+config:
+  tunnel: example-tunnel
+  credentials-file: /etc/cloudflared/credentials.json
+  metrics: 0.0.0.0:2000
+  no-autoupdate: true
+  ingress:
+  - hostname: hello.example.com
+    service: http://hello.mynamespace:8000
+  - service: http_status:404
