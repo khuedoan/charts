@@ -1,6 +1,35 @@
 apiVersion: v1
 entries:
+  backstage:
+  - apiVersion: v2
+    appVersion: v0.1.1-alpha.23
+    created: "2021-12-29T15:51:12.050622057Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.4.1
+    description: A Helm chart for Backstage
+    digest: 4d4ed51b994f97322c1dbfdb67f6843c4f11f4cb56bf57465f0017afa6de3b44
+    name: backstage
+    sources:
+    - https://github.com/backstage/backstage
+    - https://github.com/spotify/lighthouse-audit-service
+    type: application
+    urls:
+    - https://github.com/khuedoan/charts/releases/download/backstage-0.1.2/backstage-0.1.2.tgz
+    version: 0.1.2
   cloudflared:
+  - apiVersion: v2
+    appVersion: 2021.12.4
+    created: "2021-12-29T15:51:12.166482428Z"
+    description: Helm chart to deploy Cloudflare Tunnel
+    digest: 47681a5a24ea0ba4edeb26c89eadfc136e768e76af6e021e73be7560125ad9d9
+    name: cloudflared
+    type: application
+    urls:
+    - https://github.com/khuedoan/charts/releases/download/cloudflared-0.2.0/cloudflared-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 2021.11.0
     created: "2021-12-11T11:46:16.736085414Z"
@@ -51,4 +80,4 @@ entries:
     urls:
     - https://github.com/khuedoan/charts/releases/download/cloudflared-0.1.3/cloudflared-0.1.3.tgz
     version: 0.1.3
-generated: "2021-12-11T11:46:16.736108114Z"
+generated: "2021-12-29T15:51:12.166508129Z"
