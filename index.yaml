@@ -22,6 +22,16 @@ entries:
   cloudflared:
   - apiVersion: v2
     appVersion: 2021.12.4
+    created: "2021-12-29T16:26:12.386827922Z"
+    description: Helm chart to deploy Cloudflare Tunnel
+    digest: 4e5ee8a0f449d9fc9c31dc5f6dc9ce58a29a1c0137953205096c21a5ef2a44cd
+    name: cloudflared
+    type: application
+    urls:
+    - https://github.com/khuedoan/charts/releases/download/cloudflared-0.2.2/cloudflared-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 2021.12.4
     created: "2021-12-29T16:14:40.554949356Z"
     description: Helm chart to deploy Cloudflare Tunnel
     digest: 595fbc034875959b8f3752c2f93f670e70f266a9fc754359a1065cc2c4f1f2f5
@@ -90,4 +100,4 @@ entries:
     urls:
     - https://github.com/khuedoan/charts/releases/download/cloudflared-0.1.3/cloudflared-0.1.3.tgz
     version: 0.1.3
-generated: "2021-12-29T16:14:40.554993956Z"
+generated: "2021-12-29T16:26:12.386874422Z"
