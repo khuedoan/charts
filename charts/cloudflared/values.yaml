@@ -26,6 +26,8 @@ tolerations: []
 
 affinity: {}
 
+maxUnavailable: 1
+
 # Tunnel credentials
 # Run cloudflared tunnel login to gen a JSON credential file
 # Or use the cloudflare_argo_tunnel resource in Terraform
