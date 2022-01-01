@@ -53,3 +53,14 @@ config:
   - hostname: hello.example.com
     service: http://hello.mynamespace:8000
   - service: http_status:404
+
+podMonitor:
+  enabled: false
+
+  metricsEndpoints: {}
+  # - port: http
+  #   interval: 15s
+
+  # additional labels for the ServiceMonitor
+  extraLabels: {}
+  #  release: kube-prometheus-stack
