@@ -30,7 +30,7 @@ spec:
           ports:
             - name: http
               containerPort: 2000
-              prtoocol: TCP
+              protocol: TCP
           args:
             - tunnel
             - --config
